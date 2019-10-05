@@ -1,6 +1,6 @@
 FROM golang as builder
 WORKDIR /opt/go/src/
-COPY go.mod go.sum ./
+COPY go.mod go.sum
 RUN go mod download
 COPY . /
 RUN go build . -o /docker-echo
