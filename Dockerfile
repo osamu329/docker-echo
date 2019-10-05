@@ -7,7 +7,7 @@ RUN go build . -o /docker-echo
 
 FROM debian:latest
 RUN apt-get update && apt-get upgrade
-COPY --from builder /docker-echo /docker-echo
+COPY --from=builder /docker-echo /docker-echo
 CMD ["/docker-echo"]
 
 
